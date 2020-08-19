@@ -1,6 +1,6 @@
 {
   "name": "@icatjs/worker-dom",
-  "version": "0.0.0-experimental-0",
+  "version": "0.0.0-experimental-0.0",
   "originalName": "@ampproject/worker-dom",
   "originalVersion": "0.25.1",
   "description": "A facsimile of a modern DOM implementation intended to run in a Web Worker.",
