@@ -54,6 +54,7 @@ export class WorkerContext {
       }
     }
 
+    const sourceURL = config.authorURL ? `//# sourceURL=${encodeURI(config.authorURL)}` : '';
     const code = `
       ;(function(){
         ${workerDOMScript}
@@ -73,7 +74,7 @@ export class WorkerContext {
         Object.keys(workerDOM).forEach(function(k){self[k]=workerDOM[k]});
       }).call(self);
       ${authorScript}
-      //# sourceURL=${encodeURI(config.authorURL)}`;
+      ${sourceURL}`;
     this[TransferrableKeys.worker] = new Worker(URL.createObjectURL(new Blob([code])));
     if (WORKER_DOM_DEBUG) {
       console.info('debug', 'hydratedNode', readableHydrateableRootNode(baseElement, config, this));
