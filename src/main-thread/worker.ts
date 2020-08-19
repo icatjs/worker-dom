@@ -55,8 +55,7 @@ export class WorkerContext {
     }
 
     const code = `
-      'use strict';
-      (function(){
+      ;(function(){
         ${workerDOMScript}
         self['window'] = self;
         var workerDOM = WorkerThread.workerDOM;

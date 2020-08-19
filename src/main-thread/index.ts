@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-import { fetchAndInstall } from './install';
+import { fetchAndInstall, install } from './install';
+import { WorkerDOMConfiguration } from './configuration';
 import { ExportedWorker } from './exported-worker';
 
 export function upgradeElement(baseElement: Element, domURL: string): Promise<ExportedWorker | null> {
@@ -26,4 +27,16 @@ export function upgradeElement(baseElement: Element, domURL: string): Promise<Ex
     });
   }
   return Promise.resolve(null);
+}
+
+/**
+ * @param baseElement
+ * @param fetchPromise Promise that resolves containing worker script, and author script.
+ */
+export function upgrade(
+  baseElement: Element,
+  fetchPromise: Promise<[string, string]>,
+  config: WorkerDOMConfiguration,
+): Promise<ExportedWorker | null> {
+  return install(fetchPromise, baseElement as HTMLElement, config);
 }

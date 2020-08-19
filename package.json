@@ -1,6 +1,8 @@
 {
-  "name": "@ampproject/worker-dom",
-  "version": "0.25.1",
+  "name": "@icatjs/worker-dom",
+  "version": "0.0.0-experimental-0",
+  "originalName": "@ampproject/worker-dom",
+  "originalVersion": "0.25.1",
   "description": "A facsimile of a modern DOM implementation intended to run in a Web Worker.",
   "main": "dist/main",
   "files": [
@@ -8,12 +10,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ampproject/worker-dom.git"
+    "url": "https://github.com/icatjs/worker-dom.git"
   },
   "engines": {
     "node": ">=10.14"
   },
-  "author": "The AMP HTML Authors",
+  "author": "vk(valleykiddy@gmail.com) && The AMP HTML Authors",
   "license": "Apache-2.0",
   "scripts": {
     "tsc:worker": "tsc -p src/worker-thread/tsconfig.json",
