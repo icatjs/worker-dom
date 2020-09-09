@@ -10,12 +10,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ampproject/worker-dom.git"
+    "url": "https://github.com/icatjs/worker-dom.git"
   },
   "engines": {
     "node": ">=10.14"
   },
-  "author": "The AMP HTML Authors",
+  "author": "vk(valleykiddy@gmail.com) && The AMP HTML Authors",
   "license": "Apache-2.0",
   "scripts": {
     "tsc:worker": "tsc -p src/worker-thread/tsconfig.json",
@@ -35,7 +35,7 @@
     "build": "cross-env MINIFY_BUNDLE=true npm-run-all ~rollup",
     "presize": "npm-run-all build",
     "size": "filesize",
-    "release": "HUSKY_SKIP_HOOKS=1 np --no-2fa",
+    "release": "HUSKY_SKIP_HOOKS=1 np --no-2fa --any-branch --no-cleanup --no-tests",
     "prepublishOnly": "npm-run-all clean build"
   },
   "devDependencies": {
